@@ -1,23 +1,24 @@
 version: 0.2
 
 phases:
-  install: 
+  install:
+    runtime-versions:
+      nodejs: 20  # Choose the Node.js version you need
+
+  pre_build:
     commands:
-     - echo installin NIGINX
-     - sudo apt-get update
-     - sudo apt-get install -y nodejs
-     - sudo apt-get install npm -y
+      - npm install -g npm@latest # Update npm to the latest version
+      - npm ci  # Install project dependencies based on package-lock.json
+      # You can include additional commands here, such as running tests
+
   build:
     commands:
-      - echo "Package & Dependicies are getting installed"
-      - npm -f install
-      - npm run build
-      - echo "Packages have been installed"
-      - echon "Storing Build Artifact to the Location"
-  post_build:
-    commands:
-     - echo Configuring nginx    
+      - npm run build  # Assuming your project has a build script
+
 artifacts:
   files:
-   - '**/*'
-  name: mydemo-app
+    - '**/*'  # Include all files in the artifact
+
+cache:
+  paths:
+    - 'node_modules/**/*'
