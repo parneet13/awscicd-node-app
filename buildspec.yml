@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - npm install -g npm@latest # Update npm to the latest version
-      - npm ci  # Install project dependencies based on package-lock.json
+      - npm i  # Install project dependencies based on package-lock.json
       # You can include additional commands here, such as running tests
 
   build:
