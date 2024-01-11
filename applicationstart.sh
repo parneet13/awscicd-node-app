@@ -1,3 +1,4 @@
 cd /var/www/html
-pm2 restart mynode
+npm start 
+#pm2 restart mynode
 ###########
