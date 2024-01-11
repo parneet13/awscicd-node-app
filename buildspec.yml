@@ -18,7 +18,8 @@ phases:
 artifacts:
   files:
     - '**/*'  # Include all files in the artifact
-
+  exclude:
+    - .git/**/*
 cache:
   paths:
     - 'node_modules/**/*'
