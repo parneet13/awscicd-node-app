@@ -2,8 +2,11 @@ version: 0.2
 
 phases:
   install: 
-    runtime-versions:
-      nodejs: 20
+    commands:
+     - echo installin NIGINX
+     - sudo apt-get update
+     - sudo apt-get install -y nodejs
+     - sudo apt-get install npm -y
   build:
     commands:
       - echo "Package & Dependicies are getting installed"
