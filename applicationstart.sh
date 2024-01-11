@@ -1,1 +1,1 @@
-sudo pm2 restart mynode
+pm2 restart mynode
