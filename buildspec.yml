@@ -1,9 +1,11 @@
 version: 0.2
 
+
 phases:
   install:
     runtime-versions:
       nodejs: 20  # Choose the Node.js version you need
+
 
   pre_build:
     commands:
@@ -11,10 +13,17 @@ phases:
       - npm i  # Install project dependencies based on package-lock.json
       # You can include additional commands here, such as running tests
 
+
   build:
     commands:
       - npm run build  # Assuming your project has a build script
 
+
 artifacts:
   files:
     - '**/*'  # Include all files in the artifact
+#  exclude:
+#    - .git/**/*
+#cache:
+#  paths:
+#    - 'node_modules/**/*'
